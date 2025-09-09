@@ -8,9 +8,15 @@ type Todo = {
 };
 interface TodoInfoProps {
   todo: Todo;
+  user?: User;
 }
-
-export const TodoInfo = ({ todo }: TodoInfoProps) => {
+type User = {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+};
+export const TodoInfo = ({ todo, user }: TodoInfoProps) => {
   return (
     <article
       data-id={todo.id}
@@ -19,7 +25,7 @@ export const TodoInfo = ({ todo }: TodoInfoProps) => {
       })}
     >
       <h2 className="TodoInfo__title">{todo.title}</h2>
-      <UserInfo userID={todo.userId} />
+      {user && <UserInfo user={user} />}
     </article>
   );
 };

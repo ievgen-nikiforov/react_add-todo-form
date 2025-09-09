@@ -20,18 +20,18 @@ export const App = () => {
       setErrorTitle(true);
     }
     if (userID !== 0 && titleInput) {
-    setTodos([
-      ...todos,
-      {
-        id: Math.max(...todos.map(t => t.id)) + 1,
-        title: titleInput,
-        completed: false,
-        userId: userID,
-      },
-    ]);
-    setTitleInput('');
-    setUserID(0);
-  }
+      setTodos([
+        ...todos,
+        {
+          id: Math.max(...todos.map(t => t.id)) + 1,
+          title: titleInput,
+          completed: false,
+          userId: userID,
+        },
+      ]);
+      setTitleInput('');
+      setUserID(0);
+    }
   };
   const selectUser = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setErrorUser(false);
@@ -78,7 +78,7 @@ export const App = () => {
           Add
         </button>
       </form>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} userList={usersFromServer} />
     </div>
   );
 };

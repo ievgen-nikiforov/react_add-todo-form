@@ -1,12 +1,16 @@
-import usersFromServer from '../../api/users';
-type UserInfoProps = {
-  userID: number;
+type User = {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
 };
-export const UserInfo = ({ userID }: UserInfoProps) => {
-  const userData = usersFromServer.find(user => user.id === userID);
+type UserInfoProps = {
+  user: User;
+};
+export const UserInfo = ({ user }: UserInfoProps) => {
   return (
-    <a className="UserInfo" href={`mailto:${userData?.email}`}>
-      {userData?.name}
+    <a className="UserInfo" href={`mailto:${user.email}`}>
+      {user.name}
     </a>
   );
 };
