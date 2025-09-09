@@ -19,6 +19,7 @@ export const App = () => {
     if (!titleInput) {
       setErrorTitle(true);
     }
+    if (userID !== 0 && titleInput) {
     setTodos([
       ...todos,
       {
@@ -30,6 +31,7 @@ export const App = () => {
     ]);
     setTitleInput('');
     setUserID(0);
+  }
   };
   const selectUser = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setErrorUser(false);
