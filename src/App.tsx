@@ -13,7 +13,6 @@ export const App = () => {
 
   const addUser = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('click', titleInput, userID);
     if (userID === 0) {
       setErrorUser(true);
     }

@@ -12,7 +12,7 @@ export const TodoList = ({ todos }: TodoListProps) => {
   return (
     <section className="TodoList">
       {todos.map(el => (
-        <TodoInfo todo={el} />
+        <TodoInfo todo={el} key={el.id}/>
       ))}
     </section>
   );
